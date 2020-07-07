@@ -45,7 +45,7 @@ export const layout = ({
 };
 
 const codeMessage = {
-  200: '服务器成功返回请求的数据。',
+  200: '服务器成功返回请求。',
   201: '新建或修改数据成功。',
   202: '一个请求已经进入后台排队（异步任务）。',
   204: '删除数据成功。',
@@ -84,7 +84,7 @@ const errorHandler = (error: { response: Response }) => {
       message: '网络异常',
     });
   }
-  throw error;
+  throw new Error(JSON.stringify(error));
 };
 
 export const request: RequestConfig = {
