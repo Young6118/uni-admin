@@ -26,11 +26,9 @@ jobs:
     - name: install
       run: npm i
 
-    - name: build
-      run: npm run build
-
     # Runs a set of commands using the runners shell
-    - name: deploy
+    - name: Build && deploy
       run: |
-      git add dist
-      || git subtree push --prefix dist origin gh-pages
+        npm run build
+        git add dist
+        git subtree push --prefix dist origin gh-pages
