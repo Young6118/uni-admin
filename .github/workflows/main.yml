@@ -26,8 +26,11 @@ jobs:
     - name: install
       run: npm i
 
+    - name: build
+      run: yarn umi build
+
     # Runs a set of commands using the runners shell
-    - name: Build && deploy
+    - name: deploy
       run: |
-        npm run deploy,
-        echo test, and deploy your project.
+        git add dist,
+        git subtree push --prefix dist origin gh-pages
