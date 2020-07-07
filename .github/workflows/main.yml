@@ -33,4 +33,4 @@ jobs:
     - name: deploy
       run: |
       git add dist
-      git subtree push --prefix dist origin gh-pages
+      || git subtree push --prefix dist origin gh-pages
